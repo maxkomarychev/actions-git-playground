@@ -16,6 +16,10 @@ jobs:
         git status
         git remote -v
         
+        git remote set-url origin git@github.com:maxkomarychev/actions-git-playground.git
+        
+        git remote -v
+        
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
         
