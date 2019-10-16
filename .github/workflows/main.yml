@@ -12,20 +12,7 @@ jobs:
     - name: Run a one-line script
       run: echo Hello, world!
     - name: Run a multi-line script
-      run: |
-        git status
-        git remote -v
-        
-        git remote set-url origin git@github.com:maxkomarychev/actions-git-playground.git
-        
-        git remote -v
-        
-        git config --global user.email "you@example.com"
-        git config --global user.name "Your Name"
-        
-        git checkout -b master HEAD
-        
-        echo "hello from action" > hello.txt
-        git add hello.txt
-        git commit -m 'Hello'
-        git push origin master:master
+      id: ok
+      run: echo ::set-output name=action_fruit::strawberry
+    - name: pritnt ok
+      run: echo "${{ steps.ok.outputs.action_fruit }}"
