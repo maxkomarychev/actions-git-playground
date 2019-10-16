@@ -14,6 +14,12 @@ jobs:
     - name: Run a multi-line script
       run: |
         git status
+        
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        
+        git checkout -b master HEAD
+        
         echo "hello from action" > hello.txt
         git add hello.txt
         git commit -m 'Hello'
